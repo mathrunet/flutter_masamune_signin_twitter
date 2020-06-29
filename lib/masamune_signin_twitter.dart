@@ -9,6 +9,7 @@
 library masamune.signin.twitter;
 
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:flutter/widgets.dart';
 import 'package:flutter_twitter/flutter_twitter.dart';
 import 'package:masamune_firebase/masamune_firebase.dart';
 export 'package:masamune_flutter/masamune_flutter.dart';

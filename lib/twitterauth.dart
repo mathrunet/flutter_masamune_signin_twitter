@@ -6,9 +6,20 @@ class TwitterAuth {
   ///
   /// [twitterAPIKey]: Twitter API Key.
   /// [twitterAPISecret]: Twitter API Secret.
-  static void options({String twitterAPIKey, String twitterAPISecret}) {
+  static void initialize({String twitterAPIKey, String twitterAPISecret}) {
     _twitterAPIKey = twitterAPIKey;
     _twitterAPISecret = twitterAPISecret;
+  }
+
+  /// Gets the options for the provider.
+  static const AuthProviderOptions options = const AuthProviderOptions(
+      id: "twitter",
+      provider: _provider,
+      title: "Twitter SignIn",
+      text: "Sign in with your Twitter account.");
+  static Future<FirestoreAuth> _provider(
+      BuildContext context, Duration timeout) {
+    return signIn(timeout: timeout);
   }
 
   static String _twitterAPIKey;
