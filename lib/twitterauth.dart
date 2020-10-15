@@ -46,11 +46,10 @@ class TwitterAuth {
             default:
               break;
           }
-          return TwitterAuthProvider.getCredential(
-              authToken: result.session.token,
-              authTokenSecret: result.session.secret);
+          return TwitterAuthProvider.credential(
+              accessToken: result.session.token, secret: result.session.secret);
         },
-        providerId: TwitterAuthProvider.providerId,
+        providerId: TwitterAuthProvider.PROVIDER_ID,
         protocol: protocol,
         timeout: timeout);
   }
